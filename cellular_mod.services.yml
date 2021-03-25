@@ -1,0 +1,4 @@
+services:
+  plugin.manager.cellular_mod:
+    class: Drupal\cellular_mod\CellularModManager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@config.typed']

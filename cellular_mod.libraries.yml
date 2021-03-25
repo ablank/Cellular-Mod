@@ -1,0 +1,12 @@
+cellular_mod:
+  css:
+    theme:
+      css/cellular_mod.css: {}
+  js:
+    js/cellular_mod.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.debounce
+    - core/drupalSettings

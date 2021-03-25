@@ -1,0 +1,25 @@
+cellular_mod.list_page:
+  route_name: cellular_mod.list_page
+  title: 'List'
+  base_route: cellular_mod.overview
+  weight: 0
+cellular_mod.tree_page:
+  route_name: cellular_mod.tree_page
+  title: 'Tree'
+  base_route: cellular_mod.overview
+  weight: 5
+cellular_mod.form_page:
+  route_name: cellular_mod.form_page
+  title: 'Form'
+  base_route: cellular_mod.overview
+  weight: 10
+cellular_mod.raw_page:
+  route_name: cellular_mod.raw_page
+  title: 'Raw data'
+  base_route: cellular_mod.overview
+  weight: 15
+cellular_mod.download:
+  route_name: cellular_mod.download
+  title: 'Download'
+  base_route: cellular_mod.overview
+  weight: 20

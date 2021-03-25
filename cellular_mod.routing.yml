@@ -1,0 +1,7 @@
+cellular_mod.lipsum:
+  path: '/lipsum'
+  defaults:
+    _controller: 'Drupal\cellular_mod\Controller\CellularModController::lipsum'
+    _title: 'Lorem Ipsum'
+  requirements: 
+    _permission: 'access content'

@@ -1,0 +1,9 @@
+name: Cellular Mod
+description: Companion module for Cellular themes
+type: module
+package: UI
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:field
+  - drupal:media
+configure: cellular_mod.settings
