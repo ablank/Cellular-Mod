@@ -9,7 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Defines a form for editing configuration translations.
  */
-class ConfigInspectorItemForm extends FormBase {
+class CellularModItemForm extends FormBase {
 
   /**
    * {@inheritdoc}

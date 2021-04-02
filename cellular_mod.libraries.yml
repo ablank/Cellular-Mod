@@ -1,7 +1,7 @@
 cellular_mod:
-  css:
-    theme:
-      css/cellular_mod.css: {}
+  #css:
+    #theme:
+      #css/cellular_mod.css: {}
   js:
     js/cellular_mod.js: {}
   dependencies:

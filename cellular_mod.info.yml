@@ -3,7 +3,22 @@ description: Companion module for Cellular themes
 type: module
 package: UI
 core_version_requirement: ^8 || ^9
+  
 dependencies:
+  - drupal:block
   - drupal:field
+  - drupal:file
+  - drupal:image
   - drupal:media
+  - drupal:user
+  - drupal:views
+
+  #@todo:
+  #blocks
+  #image-styles
+  #media-styles
+  #content-types
+  #tags
+  #views
+
 configure: cellular_mod.settings

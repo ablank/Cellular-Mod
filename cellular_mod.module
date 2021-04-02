@@ -16,3 +16,42 @@ function cellular_mod_help($route_name, RouteMatchInterface $route_match) {
       return '<p>' . t('List of configuration keys to review with their configuration schema. Keys that have no schema are displayed but only raw data review is possible. Check out the <a href=":schema_link">configuration schema documentation</a> for more details.', [':schema_link' => 'https://drupal.org/node/1905070']) . '</p>';
   }
 }
+
+/**
+ * 
+ */
+function cellular_mod_preprocess_block (&$variables){
+  $block_manager = \Drupal::service('plugin.manager.block');
+  $config = [];
+  $plugin_block = $block_manager->createInstance('cellular_mod_social_sharing', $config);
+  $render = $plugin_block->build();
+  $variables['cellular_mod_social_sharing'] = render($render);
+}
+
+/**
+ * 
+ */
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\file\FileInterface;
+
+/**
+ * Implements hook_entity_insert().
+ * Generate all image styles once an Image is uploaded.
+ */
+function cellular_mod_entity_insert(EntityInterface $entity) {
+  /** @var \Drupal\file\Entity\File $entity */
+  if ($entity instanceof FileInterface) {
+    $image = \Drupal::service('image.factory')->get($entity->getFileUri());
+    /** @var \Drupal\Core\Image\Image $image */
+    if ($image->isValid()) {
+      $styles = ImageStyle::loadMultiple();
+      $image_uri = $entity->getFileUri();
+      /** @var \Drupal\image\Entity\ImageStyle $style */
+      foreach ($styles as $style) {
+        $destination = $style->buildUri($image_uri);
+        $style->createDerivative($image_uri, $destination);
+      }
+    }
+  }
+}
